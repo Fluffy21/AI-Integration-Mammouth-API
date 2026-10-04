@@ -1,0 +1,11 @@
+services:
+  mammouth-chat:
+    build: .
+    container_name: mammouth-chat
+    ports:
+      - "8501:8501"
+    environment:
+      - MAMMOUTH_API_KEY=${MAMMOUTH_API_KEY}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
